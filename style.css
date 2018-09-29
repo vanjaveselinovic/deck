@@ -1,0 +1,28 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	font-family: sans-serif;
+	font-size: 16px;
+	background: white;
+	color: rgba(0,0,0,0.33);
+}
+
+.deck {
+	background: black;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+}
+
+.card {
+	position: absolute;
+	background: white;
+	border-radius: 10px;
+	width: 100%;
+	height: 100%;
+}
