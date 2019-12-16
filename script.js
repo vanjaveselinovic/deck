@@ -1,6 +1,7 @@
 $(document).ready(() => {
 	let dragging = false;
 	let currentCardElement;
+	let bottomBarElement;
 	const startCardPosition = {
 		x: 0,
 		y: 0,
@@ -25,6 +26,7 @@ $(document).ready(() => {
 
 	$('.card-container').on('touchstart', (e) => {
 		currentCardElement = e.delegateTarget;
+		bottomBarElement = currentCardElement.querySelector('.bottom-bar');
 		$(currentCardElement).addClass('dragging');
 
 		startCardPosition.x = currentCardElement.offsetLeft;
@@ -46,6 +48,8 @@ $(document).ready(() => {
 
 			currentCardElement.style.left = (startCardPosition.x + currTouchPosition.x - startTouchPosition.x) + 'px';
 			currentCardElement.style.top = (startCardPosition.y + currTouchPosition.y - startTouchPosition.y) + 'px';
+
+			bottomBarElement.style.opacity = Math.min(1 - ((Math.abs(currTouchPosition.x - startTouchPosition.x) + Math.abs(currTouchPosition.y - startTouchPosition.y))/2) / 100, 1);
 		}
 	})
 
@@ -67,6 +71,7 @@ $(document).ready(() => {
 			}, 100, () => {
 				$(currentCardElement).removeClass('dragging');
 			});
+			bottomBarElement.style.opacity = 1;
 		}
 		dragging = false;
 	});
