@@ -11,6 +11,7 @@ body {
 	font-size: 16px;
 	background: white;
 	color: rgba(0,0,0,0.33);
+	overscroll-behavior: none;
 }
 
 	.deck {
