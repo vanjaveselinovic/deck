@@ -3,26 +3,104 @@
 }
 
 body {
+	--card-width: 320px;
 	margin: 0;
 	width: 100%;
 	height: 100%;
-	font-family: sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 16px;
 	background: white;
 	color: rgba(0,0,0,0.33);
 }
 
-.deck {
-	background: black;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-}
+	.deck {
+		background: black;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+	}
 
-.card {
-	position: absolute;
-	background: white;
-	border-radius: 10px;
-	width: 100%;
-	height: 100%;
-}
+		.card-container {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		.card {
+			box-sizing: content-box;
+			box-shadow: 0 0 10px rgba(0, 0, 0, .05), 0 1px 2px rgba(0, 0, 0, .2);
+			position: absolute;
+			background: white;
+			border-radius: 15px;
+			width: 100%;
+			padding-bottom: 175%;
+			bottom: 70px;
+		}
+
+		.bottom-bar {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			opacity: 0;
+			transition: opacity .5s;
+			color: white;
+			width: 100%;
+			height: 70px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			padding: 0 20px;
+		}
+
+			.icon {
+				width: 40px;
+				height: 40px;
+				background: grey;
+				margin-right: 10px;
+				border-radius: 50px;
+			}
+
+			.stuff {
+				flex: 1;
+				height: 50px;
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+				.name {
+					font-weight: 600;
+					opacity: .9;
+				}
+
+				.comment {
+					opacity: .7;
+					-webkit-line-clamp: 2;
+				    display: -webkit-box;
+				    -webkit-box-orient: vertical;
+				}
+
+			.collect, .like {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-left: 15px;
+				opacity: .9;
+			}
+
+			.collect img, .like img {
+				filter: invert(1);
+			}
+
+		.card-container.current .bottom-bar {
+			opacity: 1;
+		}
+
+		.card-container.dragging .bottom-bar {
+			opacity: 0;
+		}
+
+		.card-container.done {
+			display: none;
+		}
