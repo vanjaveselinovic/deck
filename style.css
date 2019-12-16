@@ -34,7 +34,7 @@ body {
 			background: white;
 			border-radius: 15px;
 			width: 100%;
-			padding-bottom: 150%;
+			padding-bottom: 125%;
 			bottom: 70px;
 			background-size: cover;
 			background-position: center;
@@ -56,7 +56,7 @@ body {
 					background-image: url(https://static.tumblr.com/591a25303ca65528ec9ab82bf3dc71e9/3gn3box/iaCpd9yfc/tumblr_static_f9iklifbkhcsswc00s40wkwg.png);
 					background-size: cover;
 					background-position: center;
-					border: 1px solid white;
+					border: .75px solid white;
 				}
 
 				.top-bar .name {
